@@ -19,8 +19,8 @@ console.log('');
 do {
   // Generating random letter --> with function
   letters_array_short.push(getRndCharacter());
-} while(letters_array_short.length < letters_array_long.length);
-console.log('The former shortest array is: ' , letters_array_short);
+} while (letters_array_short.length < letters_array_long.length);
+console.log('The ex-shortest array now is: ' , letters_array_short);
 console.log('');
 
 
@@ -29,14 +29,21 @@ console.log('*** SOLUTION NUMBER 2 - PLAYING WITH NUMBERS ***');
 console.log('');
 
 // Initialization of variables and constants
-var numbers_arrayOne = [27, 87, 9, 12, 5, 24, 85, 90, 41, 33, 70, 15];
-var numbers_arrayTwo = [8, 26, 88, 93, 1, 3, 14, 57];
+var numbers_array_long = [27, 87, 9, 12, 5, 24, 85, 90, 41, 33, 70, 15];
+var numbers_array_short = [8, 26, 88, 93, 1, 3, 14, 57];
 const minimum_number = 1;
-const maximum_number = 1000;
+const maximum_number = 100;
+console.log('The longest numbers array is: ' , numbers_array_long);
+console.log('The shortest numbers array is: ' , numbers_array_short);
+console.log('');
 
-// Generating random number --> with function
-var random_number = getRndInteger(minimum_number, maximum_number);
-console.log('The random number generated is: ' + random_number + '.');
+do {
+  // Generating random number --> with function
+  numbers_array_short.push(getRndInteger(minimum_number, maximum_number));
+} while (numbers_array_short.length < numbers_array_long.length);
+console.log('The ex-shortest array now is: ' , numbers_array_short);
+console.log('');
+
 
 // ----------------------- Creation of functions ------------------------
 
