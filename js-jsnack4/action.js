@@ -11,14 +11,18 @@ console.log('');
 
 // Initialization of variables
 var letters_array_long = ['a', 'g', 'q', 'c', 'f', 'h', 'p', 'r', 's', 'b', 'z'];
-var letters_array_short = ['d', 'l', 'w', 'j', 't', 'm', 'k'];
+var letters_array_short = ['d', 'l', 'w', 'm', 'k'];
 console.log('The longest letters array is: ' , letters_array_long);
 console.log('The shortest letters array is: ' , letters_array_short);
 console.log('');
 
 do {
-  // Generating random letter --> with function
-  letters_array_short.push(getRndCharacter());
+  // Generating random character --> with function
+  var random_letter = getRndCharacter();
+  // Check if random letter is already present in both the existing arrays
+  if (!letters_array_long.includes(random_letter) && !letters_array_short.includes(random_letter)) {
+    letters_array_short.push(random_letter);
+  }
 } while (letters_array_short.length < letters_array_long.length);
 console.log('The ex-shortest array now is: ' , letters_array_short);
 console.log('');
@@ -30,7 +34,7 @@ console.log('');
 
 // Initialization of variables and constants
 var numbers_array_long = [27, 87, 9, 12, 5, 24, 85, 90, 41, 33, 70, 15];
-var numbers_array_short = [8, 26, 88, 93, 1, 3, 14, 57];
+var numbers_array_short = [8, 26, 88, 93, 1, 3, 14];
 const minimum_number = 1;
 const maximum_number = 100;
 console.log('The longest numbers array is: ' , numbers_array_long);
@@ -39,7 +43,11 @@ console.log('');
 
 do {
   // Generating random number --> with function
-  numbers_array_short.push(getRndInteger(minimum_number, maximum_number));
+  var random_number = getRndInteger(minimum_number, maximum_number);
+  // Check if random number is already present in both the existing arrays
+  if (!numbers_array_long.includes(random_number) && !numbers_array_short.includes(random_number)) {
+    numbers_array_short.push(random_number);
+  }
 } while (numbers_array_short.length < numbers_array_long.length);
 console.log('The ex-shortest array now is: ' , numbers_array_short);
 console.log('');
