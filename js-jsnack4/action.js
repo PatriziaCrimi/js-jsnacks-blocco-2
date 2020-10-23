@@ -1,62 +1,52 @@
 /*
 ASSIGNMENT
-Crea un array di numeri interi
-e fai la somma di tutti gli elementi che sono in posizione dispari.
+Crea due array che hanno un numero di elementi diversi.
+Aggiungi elementi casuali all’array che ha meno elementi,
+fino a quando ne avrà tanti quanti l’altro.
 */
 
-// ************ SOLUTION NUMBER 1 - BASIC ************
-console.log('*** SOLUTION NUMBER 1 - BASIC ***');
+// **************** SOLUTION NUMBER 1 - PLAYING WITH LETTERS ****************
+console.log('*** SOLUTION NUMBER 1 - PLAYING WITH LETTERS ***');
+console.log('');
 
 // Initialization of variables
-var integers_list = [];
-const integers_list_length = 5;
-const maximum_number = 100 + 1;
-var sum = 0;
+var letters_array_long = ['a', 'g', 'q', 'c', 'f', 'h', 'p', 'r', 's', 'b', 'z'];
+var letters_array_short = ['d', 'l', 'w', 'j', 't', 'm', 'k'];
+console.log('The longest letters array is: ' , letters_array_long);
+console.log('The shortest letters array is: ' , letters_array_short);
+console.log('');
 
-// Creation of random integers array
-var i = 0;
-while (i < integers_list_length) {
-  var integer_number = Math.floor(Math.random() * maximum_number);
-  integers_list.push(integer_number);
-  i++;
-}
-
-// Selecting only numbers with odd index
-for (i = 0; i < integers_list.length; i++) {
-  if (i % 2) {
-    sum = sum + integers_list[i];
-  }
-}
-
-// Print output in console
-console.log('The list of random integer numbers is: ')
-console.log(integers_list);
-console.log('The sum of numbers with an odd index is: ' + sum + '.');
+do {
+  // Generating random letter --> with function
+  letters_array_short.push(getRndCharacter());
+} while(letters_array_short.length < letters_array_long.length);
+console.log('The former shortest array is: ' , letters_array_short);
 console.log('');
 
 
-// ************ SOLUTION NUMBER 2 - OPTIMIZATION ************
-console.log('*** SOLUTION NUMBER 2 - OPTIMIZATION ***');
+// **************** SOLUTION NUMBER 2 - PLAYING WITH NUMBERS ****************
+console.log('*** SOLUTION NUMBER 2 - PLAYING WITH NUMBERS ***');
+console.log('');
 
-// Initialization of variables
-integers_list = [];
-sum = 0
+// Initialization of variables and constants
+var numbers_arrayOne = [27, 87, 9, 12, 5, 24, 85, 90, 41, 33, 70, 15];
+var numbers_arrayTwo = [8, 26, 88, 93, 1, 3, 14, 57];
+const minimum_number = 1;
+const maximum_number = 1000;
 
-// Creation of random integers array
-i = 0;
-while (i < integers_list_length) {
-  integer_number = Math.floor(Math.random() * maximum_number);
-  integers_list.push(integer_number);
-  i++;
+// Generating random number --> with function
+var random_number = getRndInteger(minimum_number, maximum_number);
+console.log('The random number generated is: ' + random_number + '.');
+
+// ----------------------- Creation of functions ------------------------
+
+// ### FUNCTION: Generating random letter ###
+function getRndCharacter() {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 
-// Selecting only numbers with odd index
-// starting from "index = 1" (odd) and selecting only every-other-number (certainly odd index too) using "i = i+2"
-for (i = 1; i < integers_list.length; i = i+2) {
-    sum = sum + integers_list[i];
+// ### FUNCTION: Generating random number ###
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-
-// Print output in console
-console.log('The list of random integer numbers is: ')
-console.log(integers_list);
-console.log('The sum of numbers with an odd index is: ' + sum + '.');
