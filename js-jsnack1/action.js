@@ -1,7 +1,8 @@
 /*
 ASSIGNMENT
 Generatore di “nomi cognomi” casuali:
-prendendo a caso un nome e un cognome da una lista di nomi e da una lista di cognomi, Gatsby vuole generare una falsa lista di invitati.
+prendendo a caso un nome e un cognome da una lista di nomi e da una lista di cognomi,
+Gatsby vuole generare una falsa lista di invitati.
 */
 
 // Initialization of variables
